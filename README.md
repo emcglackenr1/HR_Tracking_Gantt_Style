@@ -3,7 +3,7 @@
   
 >Making a HR Tracking page in the style of a Gantt chart. Using SCSS and JS. 
 
->Inspired by the original [Codepen](https://codepen.io/) design [Gantt Chart](https://codepen.io/mbbillz/pen/YZRKZM) by [mbbillz](https://codepen.io/mbbillz)
+>Based on the [Codepen](https://codepen.io/) design [Gantt Chart](https://codepen.io/mbbillz/pen/YZRKZM) by [mbbillz](https://codepen.io/mbbillz)
 
 **Version 1:**  
 
