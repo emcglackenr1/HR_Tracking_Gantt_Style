@@ -12,3 +12,8 @@ Currently in the process of making a CSS version, testing locally. Compiled opti
 > This was how the page appeared after adapting the design from Codepen to be published via Github pages, using original SCSS
 
 <img width="1857" height="765" alt="image" src="https://github.com/user-attachments/assets/069b7a56-8d29-48a4-9586-ad7a77ea0ebd" />
+
+**Testing More Birdseye View**  
+> Testing visually via Codepen for speed before adding here, screenshot below
+
+<img width="1306" height="596" alt="image" src="https://github.com/user-attachments/assets/3999abd7-b127-49ba-8a2d-8f66a2492d9d" />
