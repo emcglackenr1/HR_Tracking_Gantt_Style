@@ -1,51 +1,20 @@
-//EXTERNAL CSS USED - none
-
-/////////////////////////////////////////////////////////COLOURS
-$white:  #fff !default;
-$black:  #000 !default;
-$red:    #d9534f !default;
-$orange: #f0ad4e !default;
-$yellow: #ffd500 !default;
-$green:  #5cb85c !default;
-$blue:   #0275d8 !default;
-$teal:   #5bc0de !default;
-$pink:   #ff5b77 !default;
-$purple: #613d7c !default;
-
-$brand-primary:             $blue !default;
-$brand-success:             $green !default;
-$brand-info:                $teal !default;
-$brand-warning:             $orange !default;
-$brand-danger:              $red !default;
-
-/////////////////////////////////////////////////////////@Extend Elements
-%clearfix {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-%link {
-  text-decoration: none;
-  opacity: 0.7;
-  transition: .2s ease;
-  cursor: pointer;
-}
-
-%disabled-link {
-  transform: none;
-  cursor: not-allowed;
-  font-weight: normal;
-}
-
-%declined {
-  content: "X";
-  color: $white;
-  margin-left: 5px;
-}
-
-/////////////////////////////////////////////////////////GENERAL
+/* Imported web fonts */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300|Ubuntu:300,500);
+
+/* ===== Variables (inlined) =====
+$white:  #fff
+$black:  #000
+$red:    #d9534f
+$orange: #f0ad4e
+$yellow: #ffd500
+$green:  #5cb85c
+$blue:   #0275d8
+$teal:   #5bc0de
+$pink:   #ff5b77
+$purple: #613d7c
+*/
+
+/* ===== Base / General ===== */
 body {
   font-family: "Open Sans";
   font-size: 13px;
@@ -54,7 +23,7 @@ body {
 
 h1 {
   font-family: "Ubuntu";
-  color: $brand-primary !important;
+  color: #0275d8 !important; /* $brand-primary */
   font-weight: 500;
 }
 
@@ -62,130 +31,159 @@ h1 {
   display: none;
 }
 
-/////////////////////////////////////////////////////////KEY
+/* ===== KEY ===== */
 .key {
   padding: 0;
   margin: 0;
   list-style: none;
-  border-top: dashed 1px rgba($black, 0.1);
+  border-top: dashed 1px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
-  li {
-    display: inline-block;
-    margin-right: 1rem;
-    margin-top: 1rem;
-    padding: 0.5rem;
-    font-family: "Ubuntu";
-    a {
-      color: $white;
-      text-decoration: none;
-      &:hover {
-        @extend %link
-      }
-    }
-  }
-  &:after {
-    @extend %clearfix
-  }
-  .bankhol {
-    background: rgba($brand-primary, 0.1);
-  }
-  .today {
-    outline: solid 2px $brand-primary;
-  }
 }
 
-/////////////////////////////////////////////////////////GANTT CHART - CHART VIEW
+/* .key li */
+.key li {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-family: "Ubuntu";
+}
+
+/* .key li a (with %link extended on :hover) */
+.key li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* %link: on hover */
+.key li a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+/* %clearfix for .key:after */
+.key:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.key .bankhol {
+  background: rgba(2, 117, 216, 0.1); /* rgba($brand-primary, 0.1) */
+}
+
+.key .today {
+  outline: solid 2px #0275d8;
+}
+
+/* ===== GANTT CHART - CHART VIEW ===== */
 .ganttChart {
   width: 97vw;
   max-width: 1860px;
-  .scrollArea {
-    width: 80%;
-    min-width: 50%;
-    float: right;
-    position: relative;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display: block;
-  }
-  .fixedSide {
-    width: 20%;
-    float: left;
-    border-collapse: collapse;
-    td {
-      height: 24px;
-      text-align: right;
-      font-family: "Ubuntu";
-      font-weight: 300;
-      padding-right: 8px;
-    }
-    .padding {
-      height: 75px;
-    }
-  }
-  .chartLayout {
-    border-collapse: collapse;
-    th {
-      height: 35px;
-      text-align: center;
-      font-weight: 500;
-      font-family: "Ubuntu";
-      background: rgba($black, 0.02);
-    }
-    td {
-      min-width: 24px;
-      font-family: "Ubuntu";
-      font-weight: 300;
-      width: 25px !important;
-      padding: 0;
-      text-align: center;
-      vertical-align: text-top;
-      &:hover {
-        cursor: pointer;
-        opacity: 0.7;
-        transition: .2s ease;
-      }
-    }
-  }
-  .chartData {
-    display: block;
-    position: absolute;
-    top: 75px;
-    left: 1px;
-    .barRow {
-      height: 26px;
-      position: relative;
-      display: block;
-      width: 10175px;
-    }
-    .bar {
-      position: absolute;
-      height: 100%;
-      z-index: 1;
-      padding-right: 1px;
-      &:hover {
-        cursor: pointer;
-        opacity: 0.7;
-        transition: .2s ease;
-      }
-    }
-  }
 }
 
-/////////////////////////////////////////////////////////SHARED
-.day {
-  &:hover {
-    cursor: pointer;
-    font-weight: bold;
-    transform: scale(1.2);
-    background: $brand-primary;
-    transition: .2s ease;
-    border-radius: 3px;
-    color: $white;
-  }
+/* .ganttChart .scrollArea */
+.ganttChart .scrollArea {
+  width: 80%;
+  min-width: 50%;
+  float: right;
+  position: relative;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: block;
+}
+
+/* .ganttChart .fixedSide */
+.ganttChart .fixedSide {
+  width: 20%;
+  float: left;
+  border-collapse: collapse;
+}
+
+.ganttChart .fixedSide td {
+  height: 24px;
+  text-align: right;
+  font-family: "Ubuntu";
+  font-weight: 300;
+  padding-right: 8px;
+}
+
+.ganttChart .fixedSide .padding {
+  height: 75px;
+}
+
+/* .ganttChart .chartLayout */
+.ganttChart .chartLayout {
+  border-collapse: collapse;
+}
+
+.ganttChart .chartLayout th {
+  height: 35px;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Ubuntu";
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.ganttChart .chartLayout td {
+  min-width: 24px;
+  font-family: "Ubuntu";
+  font-weight: 300;
+  width: 25px !important;
+  padding: 0;
+  text-align: center;
+  vertical-align: text-top;
+}
+
+.ganttChart .chartLayout td:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s ease;
+}
+
+/* .ganttChart .chartData */
+.ganttChart .chartData {
+  display: block;
+  position: absolute;
+  top: 75px;
+  left: 1px;
+}
+
+.ganttChart .chartData .barRow {
+  height: 26px;
+  position: relative;
+  display: block;
+  width: 10175px;
+}
+
+.ganttChart .chartData .bar {
+  position: absolute;
+  height: 100%;
+  z-index: 1;
+  padding-right: 1px;
+}
+
+.ganttChart .chartData .bar:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s ease;
+}
+
+/* ===== SHARED ===== */
+.day:hover {
+  cursor: pointer;
+  font-weight: bold;
+  transform: scale(1.2);
+  background: #0275d8;
+  transition: 0.2s ease;
+  border-radius: 3px;
+  color: #fff;
 }
 
 .odd {
-  background: rgba($black, 0.06);
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .month {
@@ -195,92 +193,129 @@ h1 {
 }
 
 .weekend {
-  background: rgba($black, 0.05);
-  color: rgba($black, 0.5);
-  &:hover {
-    @extend %disabled-link;
-  }
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* %disabled-link inlined for .weekend:hover, .today:hover, .bankhol:hover */
+.weekend:hover,
+.today:hover,
+.bankhol:hover {
+  transform: none;
+  cursor: not-allowed;
+  font-weight: normal;
 }
 
 .today {
-  outline: solid 2px $brand-primary;
-  &:hover {
-    @extend %disabled-link;
-  }
+  outline: solid 2px #0275d8;
 }
 
 .bankhol {
-  background: rgba($brand-primary, 0.1);
-  &:hover {
-    @extend %disabled-link;
-  }
+  background: rgba(2, 117, 216, 0.1);
 }
 
-/////////////////////////////////////////////////////////ABSENCE TYPES
-.key, .chartData {
-  .show-all {
-  background: $black;
+/* ===== ABSENCE TYPES ===== */
+
+/* .key, .chartData .show-all */
+.key .show-all,
+.chartData .show-all {
+  background: #000;
 }
 
-//PENDING HOLIDAY
+/* PENDING HOLIDAY
+   lighten(#0275d8, 20%) ≈ #4aa3ff (approx)
+*/
 .pending-holiday {
-  background: linear-gradient( 45deg, lighten($brand-primary, 20%) 25%, $brand-primary 25%, $brand-primary 50%, lighten($brand-primary, 20%) 50%, lighten($brand-primary, 20%) 75%, $brand-primary 75%, $brand-primary);
-  color: $white;
+  background: linear-gradient(
+    45deg,
+    #4aa3ff 25%,
+    #0275d8 25%,
+    #0275d8 50%,
+    #4aa3ff 50%,
+    #4aa3ff 75%,
+    #0275d8 75%,
+    #0275d8
+  );
+  color: #fff;
   animation: progress 1s linear infinite;
   background-size: 30px 30px;
   opacity: 0.7;
 }
 
-//APPROVED HOLIDAY
+/* APPROVED HOLIDAY */
 .approved-holiday {
-  background-color: $brand-primary;
-  color: $white;
+  background-color: #0275d8;
+  color: #fff;
 }
 
-//DECLINED HOLIDAY
+/* DECLINED HOLIDAY
+   lighten(#d9534f, 5%) ≈ #de6a66 (approx)
+   %declined: ::after { content:"X"; color:#fff; margin-left:5px; }
+*/
 .declined-holiday {
-  background-color: lighten($brand-danger, 5%);
-  &:after {
-    @extend %declined
-  }
+  background-color: #de6a66; /* approx lighten 5% */
+  color: #fff;
 }
 
-//LATENESS
+.declined-holiday:after {
+  content: "X";
+  color: #fff;
+  margin-left: 5px;
+}
+
+/* LATENESS */
 .lateness {
-  background-color: $brand-warning;
-  color: $white;
+  background-color: #f0ad4e;
+  color: #fff;
 }
 
-//SICK
+/* SICKNESS */
 .sickness {
-  background-color: $brand-success;
-  color: $white;
+  background-color: #5cb85c;
+  color: #fff;
 }
 
-//PENDING OTHER
+/* PENDING OTHER
+   darken(#5bc0de, 20%) ≈ #2b8eac (approx)
+*/
 .pending-other {
-  background: linear-gradient( 45deg, darken($brand-info, 20%) 25%, $brand-info 25%, $brand-info 50%, darken($brand-info, 20%) 50%, darken($brand-info, 20%) 75%, $brand-info 75%, $brand-info);
-  color: $white;
+  background: linear-gradient(
+    45deg,
+    #2b8eac 25%,
+    #5bc0de 25%,
+    #5bc0de 50%,
+    #2b8eac 50%,
+    #2b8eac 75%,
+    #5bc0de 75%,
+    #5bc0de
+  );
+  color: #fff;
   animation: progress 1s linear infinite;
   background-size: 30px 30px;
   opacity: 0.7;
 }
 
-//APPROVED OTHER
+/* APPROVED OTHER */
 .approved-other {
-  background-color: $brand-info;
+  background-color: #5bc0de;
+  color: #fff;
 }
 
-//DECLINED OTHER
+/* DECLINED OTHER
+   lighten(#d9534f, 20%) ≈ #e89592 (approx)
+*/
 .declined-other {
-  background-color: lighten($brand-danger, 20%);
-  &:after {
-    @extend %declined
-  }
-}
+  background-color: #e89592; /* approx lighten 20% */
+  color: #fff;
 }
 
-/////////////////////////////////////////////////////////FUN STUFF
+.declined-other:after {
+  content: "X";
+  color: #fff;
+  margin-left: 5px;
+}
+
+/* ===== FUN STUFF ===== */
 @keyframes progress {
   0% {
     background-position: 0 0;
