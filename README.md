@@ -22,11 +22,13 @@ Currently in the process of making a CSS version, testing locally. Compiled opti
 
 > Testing visually via Codepen for speed before adding here, screenshot below
 
+  
+<img width="1167" height="592" alt="image" src="https://github.com/user-attachments/assets/b42997d7-197a-4478-8069-2816165bb3ed" />
 
-<img width="1306" height="596" alt="birdseye view test" src="https://github.com/user-attachments/assets/3999abd7-b127-49ba-8a2d-8f66a2492d9d" />  
 
 >> *Hover*
 
 
-<img width="672.5" height="291" alt="image" src="https://github.com/user-attachments/assets/cee0e170-cdd5-4522-a91b-7ab01a36c9e0" />
+<img width="585" height="293" alt="birdseye view hover" src="https://github.com/user-attachments/assets/80a570f3-69ef-42ae-9d57-d78415f1bb10" />
+
 
