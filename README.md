@@ -16,9 +16,4 @@ Currently in the process of making a CSS version, testing locally. Compiled opti
 
 
 
->> *Hover*
-
-
-<img width="585" height="293" alt="birdseye view hover" src="https://github.com/user-attachments/assets/80a570f3-69ef-42ae-9d57-d78415f1bb10" />
-
 
